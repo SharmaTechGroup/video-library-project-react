@@ -5,11 +5,15 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
 import App from './App.tsx'
 import { CookiesProvider } from 'react-cookie';
+import store from './store/store.tsx';
+import { Provider } from 'react-redux';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CookiesProvider>
-       <App />
+       <Provider store={store}>
+          <App />
+       </Provider>
     </CookiesProvider>
   </StrictMode>,
 )
